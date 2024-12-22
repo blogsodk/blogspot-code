@@ -1,28 +1,33 @@
 <script>
-function createNavigationButtons(container) {
-  // 이전 버튼 생성
+function createNavigationButtons() {
+  var firstImage = document.querySelector('.slideshow8704');
+  var container = document.createElement('div');
+  container.style.position = 'relative';
+  firstImage.parentNode.insertBefore(container, firstImage);
+  
+  // 모든 이미지를 컨테이너로 이동
+  document.querySelectorAll('.slideshow8704').forEach(img => {
+    container.appendChild(img);
+  });
+
   var prevButton = document.createElement('a');
   prevButton.className = 'prev';
   prevButton.onclick = function() { plusSlides(-1); };
   prevButton.innerHTML = '❮';
   
-  // 다음 버튼 생성
   var nextButton = document.createElement('a');
   nextButton.className = 'next';
   nextButton.onclick = function() { plusSlides(1); };
   nextButton.innerHTML = '❯';
   
-  // 버튼들을 슬라이드쇼 컨테이너에 추가
   container.appendChild(prevButton);
   container.appendChild(nextButton);
 }
 
 var slideIndex = 0;
 
-// DOM이 로드된 후 실행
 document.addEventListener('DOMContentLoaded', function() {
-  var container = document.querySelector('.slideshow8704');
-  createNavigationButtons(container);
+  createNavigationButtons();
   showSlides();
 });
 
@@ -31,7 +36,7 @@ function plusSlides(n) {
 }
 
 function showSlides() {
-  var slides = document.getElementsByClassName("mySlides");
+  var slides = document.getElementsByClassName("slideshow8704");
   for (var i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
