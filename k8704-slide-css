@@ -1,9 +1,9 @@
 <style>
-  .slideshow-container {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
+.slideshow8704 {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
   .mySlides {
     display: none;
   }
